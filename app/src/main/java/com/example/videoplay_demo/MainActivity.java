@@ -59,7 +59,7 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-        ActivityResultLauncher<String> fileChooser= registerForActivityResult(
+      ActivityResultLauncher<String> fileChooser= registerForActivityResult(
                 new ActivityResultContracts.GetContent(),
                 new ActivityResultCallback<Uri>(){
                     @Override
@@ -72,19 +72,19 @@ public class MainActivity extends AppCompatActivity {
         );
 
         //user video loading button
-        btn_userVideo.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                fileChooser.launch("video*/");
-            }
-        });
+       btn_userVideo.setOnClickListener(new View.OnClickListener() {
+           @Override
+           public void onClick(View v) {
+               fileChooser.launch("video*/");
+           }
+       });
 
 
         //web video loading button
         buttonWebURL.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-               String videoPath = "https://www.youtube.com/watch?v=I3OJUwILelU";
+               String videoPath = "https://www.learningcontainer.com/wp-content/uploads/2020/05/sample-mp4-file.mp4";
                Uri uri = Uri.parse(videoPath);
                 videoViewWebURL.setVideoURI(uri);
                 videoViewWebURL.start();
